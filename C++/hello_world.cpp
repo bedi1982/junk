@@ -12,6 +12,10 @@ void teste(int n1, int n2)
 
 int main()
 {
+	int n1;
+
+	n1 << cin;
+
 	teste(1, 2);
 	return 0;
 }
