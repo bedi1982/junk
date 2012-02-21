@@ -1,8 +1,12 @@
 #include <stdio.h>
 
+int pointer(int *a)
+{
+	printf ("Pointer p\n", a);
+}
+
 int soma(int a)
 {
-
 	return a + 2;
 }
 
@@ -14,5 +18,7 @@ main()
 	b = 2;
 	a = &b;
 	
-	printf ("%d",soma(*a));
+	pointer(a);
+
+	printf ("Soma: %d",soma(*a));
 }
