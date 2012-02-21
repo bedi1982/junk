@@ -2,7 +2,7 @@
 
 int pointer(int *a)
 {
-	printf ("Pointer p\n", a);
+	printf ("Pointer: %p\n", a);
 }
 
 int soma(int a)
