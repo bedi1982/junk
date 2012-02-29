@@ -24,7 +24,7 @@ main()
 	}
 	
 	for(i=0; i<10; i++){
-		printf("Valor no vetor de float[%d]: %f\n", i, floats[i]);
+		printf("Valor no vetor de float[%d]: %f e seu endereco:%p\n", i, floats[i], ponteiros[i]);
 		printf("Valor no vetor de point[%d]: %f\n\n", i, *ponteiros[i]);
 	}	
 }

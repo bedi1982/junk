@@ -2,7 +2,8 @@
 
 int pointer(int *a)
 {
-	printf ("Pointer: %p\n", a);
+	*a = 100;
+	printf ("Pointer: %d\n", *a);
 }
 
 int soma(int a)
@@ -13,11 +14,13 @@ int soma(int a)
 main()
 {
 	int *a;
+	int *c;
 	int b;
 
 	b = 2;
 	a = &b;
-	
+	*c = 3;
+
 	pointer(a);
 
 	printf ("Soma: %d",soma(*a));
