@@ -7,6 +7,7 @@
 //forma ordenada crescente, ficando a primeira posição do vetor de 
 //ponteiros com o endereço do menor valor até a última posição que 
 //conterá o endereço do maior valor.
+//Pego aqui: http://www3.di.ufpb.br/liliane/aulas/ponteiros.html
 
 int main()
 {
