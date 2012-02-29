@@ -19,19 +19,27 @@ int main()
 	for(i=0; i<10; i++){
 		enderecos[i] = &inteiros[i];
 	}
-/*	
+	
+	printf("Antes de ordenar:\n");
+
 	for(i=0; i<10; i++){
-		for(j=0; j<10; j++){
-			if(*enderecos[j] < *enderecos[j+1]){
+		printf ("Endereco: %p Valor nele: %d \n", enderecos[i], *enderecos[i]);
+	}
+
+	for(i=0; i<10; i++){
+		for(j=0; j<9; j++){
+			if(*enderecos[j] > *enderecos[j+1]){
 				tmp = enderecos[j];
-				enderecos[i] = tmp;
-				enderecos[j] = enderecos[i];
+				enderecos[j] = enderecos[j+1];
+				enderecos[j+1] = tmp;
 			}
 		}
 	}
-*/
+
+	printf("depois de ordenar:\n");
+
 	for(i=0; i<10; i++){
-		printf ("%p\n", enderecos[i]);
+		printf ("Endereco: %p Valor nele: %d \n", enderecos[i], *enderecos[i]);
 	}
 
 }
