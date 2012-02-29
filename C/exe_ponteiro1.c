@@ -1,7 +1,12 @@
 #include <time.h>
 #include <stdio.h>
 
-// Elabore um programa que armazene valores aleatórios em um vetor de inteiros de 10 posições e depois, em outro vetor de ponteiros de inteiros de tamanho 10, coloque os endereços dos valores do vetor de inteiros de forma ordenada crescente, ficando a primeira posição do vetor de ponteiros com o endereço do menor valor até a última posição que conterá o endereço do maior valor.
+//Elabore um programa que armazene valores aleatórios em um vetor de 
+//inteiros de 10 posições e depois, em outro vetor de ponteiros de inteiros
+//de tamanho 10, coloque os endereços dos valores do vetor de inteiros de
+//forma ordenada crescente, ficando a primeira posição do vetor de 
+//ponteiros com o endereço do menor valor até a última posição que 
+//conterá o endereço do maior valor.
 
 int main()
 {
