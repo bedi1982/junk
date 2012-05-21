@@ -18,20 +18,6 @@ namespace FolhaPagamentoQuinta
             }
             return null; //Nao tem :P
         }
-
-
-        //Retorna o funcionario baseado em nome, mes e ano:///
-        public static Folha VerificaData(Folha folha) {
-            foreach (Folha x in FolhaCollection.GetFolhas())
-            {
-                if (x.mes.Equals(folha.mes) && x.ano.Equals(folha.ano) && x.funcionario.nome.Equals(folha.funcionario.nome))
-                {
-                    //Console.WriteLine("tem"); //teste status
-                    return x;
-                }
-            }
-            return null; //Nao tem :P
-        }
         
         //##############Abaixo algoritmo colados#############//
         public static float CalcularIR(float bruto) {
@@ -76,6 +62,11 @@ namespace FolhaPagamentoQuinta
         public static float CalcularSalarioLiquido(float bruto, float inss, float fgts)
         {
             return (bruto - inss - fgts);
+        }
+
+        public static float CalcularSalarioBruto(float liquido, int trabalhadas)
+        {
+            return liquido * trabalhadas;
         }
     }
 }

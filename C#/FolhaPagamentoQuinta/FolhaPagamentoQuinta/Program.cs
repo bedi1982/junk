@@ -41,14 +41,14 @@ namespace FolhaPagamentoQuinta
                     Console.WriteLine("Digite o CPF do funcionario)");
                     string cpf = Console.ReadLine();
                     //######################################################
-                         //Consultar professor sobre esse xunxo
+                    //Consultar professor sobre esse xunxo
                     if (FuncionarioNegocios.ConsultaSeJaTemCPFCadastrado(cpf) != null)
                     { //retorna true se ja tem o cpf
                         Folha folhas = new Folha();
                         folhas.funcionario = FuncionarioNegocios.ConsultaSeJaTemCPFCadastrado(cpf);
                         //Consultar professor sobre esse xunxo 
                         //(chamando duas vezes: FuncionarioNegocios.ConsultaSeJaTemCPFCadastrado(cpf));
-                   //######################################################
+                        //######################################################
 
                         Console.WriteLine("CPF numero " + cpf + " pertence a: " + folhas.funcionario.nome);
 
@@ -63,7 +63,7 @@ namespace FolhaPagamentoQuinta
                         {
                             Console.WriteLine("Item já cadastrado nesta data, voltando ao menu...");
                         }
-                            //Se a data for valida, pergunta os outros dados e adiciona o objeto a lista
+                        //Se a data for valida, pergunta os outros dados e adiciona o objeto a lista
                         else
                         {
                             Console.WriteLine("Horas Trabalhadas no mês: ");
@@ -83,42 +83,67 @@ namespace FolhaPagamentoQuinta
                     break;
 
                 case 3:
-
                     Folha tmp = new Folha();
+                    //Tenho que criar variaveis porque não consigo usar o objeto//
+                    //FolhaNegocios antes recebia um objeto, agora recebe variaveis, bad//
+                    string nome;
+                    int mes, ano;
 
-                        Console.WriteLine("Mês: ");
-                        tmp.mes = int.Parse(Console.ReadLine());
+                    Console.WriteLine("\nMês: ");
+                    mes = int.Parse(Console.ReadLine());
 
-                        Console.WriteLine("Ano: ");
-                        tmp.ano = int.Parse(Console.ReadLine());
-                        
-                        Console.WriteLine("Nome: ");
+                    Console.WriteLine("Ano: ");
+                    ano = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Nome: ");
                     //#####
-                        Console.WriteLine("TESTE: " + tmp.funcionario.nome);
-                        tmp.funcionario.nome = Console.ReadLine();
+                    nome = Console.ReadLine();
+                    //Console.WriteLine("SAIDA: " + tmp.funcionario.Cpf);
                     //######
-
-                        if (FuncionarioNegocios.VerificaData(tmp) != null) {
-                            tmp = FuncionarioNegocios.VerificaData(tmp);
-                            Console.WriteLine(tmp);
-                        }
+                    //Enviando variaveis, porque nao posso enviar o objeto folha //
+                    //e no método chamar, por ex, folha.funcionario.nome //?
+                    tmp = FolhaNegocios.VerificaDataUsuario(nome, mes, ano);
+                    if (tmp != null)
+                    {
+                        float bruto = FuncionarioNegocios.CalcularSalarioBruto(tmp.ValorDaHora, tmp.HorasTrabalhadas);
+                        Console.WriteLine("Bruto: " + bruto);
+                        Console.WriteLine("IR: " + FuncionarioNegocios.CalcularIR(bruto));
+                        Console.WriteLine("INSS: " + FuncionarioNegocios.CalcularINSS(bruto));
+                        Console.WriteLine("FGTS: " + FuncionarioNegocios.CalcularFGTS(bruto));
+                        Console.WriteLine("Liquido: " + FuncionarioNegocios.CalcularSalarioLiquido(bruto, FuncionarioNegocios.CalcularINSS(bruto), FuncionarioNegocios.CalcularFGTS(bruto)));
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nEste preguiçoso não trabalhou neste mês");
+                    }
                     break;
 
                 case 4:
                     //Bloco de testes
+                    float TotalSalarios = 0;
+
+                    Console.WriteLine("\nMês: ");
+                    mes = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Ano: ");
+                    ano = int.Parse(Console.ReadLine());
+
                     foreach (Folha x in FolhaCollection.GetFolhas())
                     {
-                        Console.WriteLine("\n\nNome: " + x.funcionario.nome);
-                        Console.WriteLine("CPF: " + x.funcionario.Cpf);
-                        Console.WriteLine("Ano: " + x.ano);
-                        Console.WriteLine("Mes: " + x.mes);
-                        Console.WriteLine("Horas Trabalhadas: " + x.HorasTrabalhadas);
-                        Console.WriteLine("Valor da hora: " + x.ValorDaHora + "\n");
+                        if (x.mes.Equals(mes) && x.ano.Equals(ano))
+                        {
+                            Console.WriteLine("Nome: " + x.funcionario.nome);
+                            //Xunxo
+                            float bruto = FuncionarioNegocios.CalcularSalarioBruto(x.ValorDaHora, x.HorasTrabalhadas);
+                            float liquido = FuncionarioNegocios.CalcularSalarioLiquido(bruto, FuncionarioNegocios.CalcularINSS(bruto), FuncionarioNegocios.CalcularFGTS(bruto));
+                            TotalSalarios += liquido;
+                        }
                     }
-
-                    //Console.ReadKey();
-                    //Bloco de testes
-
+                    if (TotalSalarios == 0) {
+                        Console.WriteLine("Nenhum folha encontrada");
+                    }else{
+                    Console.WriteLine("Liquido no mês: " + TotalSalarios);
+                    }
                     break;
             }
         }
@@ -126,10 +151,10 @@ namespace FolhaPagamentoQuinta
         static int MostraMenu()
         {
             int opcao;
-            Console.WriteLine("1 - Cadastro de funcionário");
+            Console.WriteLine("\n1 - Cadastro de funcionário");
             Console.WriteLine("2 - Cadastro da folha");
-            Console.WriteLine("3 - Consultar folha");
-            Console.WriteLine("4 - Listar folha");
+            Console.WriteLine("3 - Consultar folha(mes, ano e nome do func)");
+            Console.WriteLine("4 - Listar todas as folhas(folhas, não funcionarios)");
             Console.WriteLine("5 - Sair");
             opcao = int.Parse(Console.ReadLine());
             return opcao;
