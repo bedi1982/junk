@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using DarthVader.Model;
 using DarthVader.DAO;
 
@@ -9,19 +7,8 @@ namespace DarthVader.View
 {
     class Program
     {
-        
-        static DarthVaderEntities context = new DarthVaderEntities();
-
         static void Main(string[] args)
         {
-            /*Testes//
-            Menu();
-            Adiciona_Jogo();
-            //Procura();
-            JogosDAO.Lista();
-            Console.ReadKey();
-            Adiciona_Emprestimo();
-            */
             int escolha;
             do
             {
@@ -132,24 +119,6 @@ namespace DarthVader.View
         /////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////
 
-        public static void Procura()
-        {
-            Jogo la = new Jogo();
-            la.ano = 2012;
-            la.plataforma = "Xbox360";
-            la.titulo = "y";
-            la.custo = 12;
-            la.emprestado = false;
-            la.data_cadastro = DateTime.Now;
-
-            la = JogosDAO.search(la);
-            Console.WriteLine("Titulo: " + la.titulo);
-            Console.ReadKey();
-        }
-
-        /////////////////////////////////////////////////////////////////////////////
-        /////////////////////////////////////////////////////////////////////////////
-
         public static void Lista_Jogos_Emprestados()
         {
             List<Emprestimo> emprestados = new List<Emprestimo>();
@@ -159,9 +128,15 @@ namespace DarthVader.View
             {
                 foreach (Emprestimo x in emprestados)
                 {
+                    Console.WriteLine("");
                     Console.WriteLine("-----------------------");
-                    Console.WriteLine("Quem Emprestou: " + x.nome + " RG: " + x.rg + " Emprestado em " + x.data_do_emprestimo);
-                    //Console.WriteLine("----" + x.jogos.plataforma);
+                    Console.WriteLine("Nome: " + x.nome);
+                    Console.WriteLine("Plataforma : " + x.jogo.plataforma);
+                    Console.WriteLine("Título: " + x.jogo.titulo);
+                    Console.WriteLine("Adicionado em " + x.jogo.data_cadastro);
+                    Console.WriteLine("Emprestei em " + x.data_do_emprestimo);
+                    Console.WriteLine("-----------------------");
+                    Console.WriteLine("");
                 }
             }
             else
@@ -181,12 +156,15 @@ namespace DarthVader.View
                 foreach (Jogo x in jogos)
                 {
                     {
+                        Console.WriteLine("");
+                        Console.WriteLine("-----------------------");
                         Console.WriteLine("Plataforma: " + x.plataforma);
                         Console.WriteLine("Título: " + x.titulo);
                         Console.WriteLine("Ano: " + x.ano);
                         Console.WriteLine("Custo: " + x.custo);
                         Console.WriteLine("Adicionado em " + x.data_cadastro);
                         Console.WriteLine("-----------------------");
+                        Console.WriteLine("");
                     }
                 }
             }

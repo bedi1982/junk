@@ -5,3 +5,10 @@ E:\DarthVader\DarthVader\bin\Debug\DarthVader.pdb
 E:\DarthVader\DarthVader\bin\Debug\EntityFramework.xml
 E:\DarthVader\DarthVader\obj\x86\Debug\DarthVader.exe
 E:\DarthVader\DarthVader\obj\x86\Debug\DarthVader.pdb
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\bin\Debug\DarthVader.exe.config
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\DarthVader.exe
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\DarthVader.pdb
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\bin\Debug\DarthVader.exe
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\bin\Debug\DarthVader.pdb
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\bin\Debug\EntityFramework.xml
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\ResolveAssemblyReference.cache

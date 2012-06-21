@@ -1,7 +1,4 @@
 ﻿using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
 
 namespace DarthVader.Model
 {
@@ -11,7 +8,7 @@ namespace DarthVader.Model
         public string titulo { set; get; }
         public string plataforma { set; get; }
         public int ano { set; get; }
-        public double custo { set; get; }
+        public float custo { set; get; }
         public bool emprestado { set; get; }
         public DateTime data_cadastro { set; get; }
     }
