@@ -1,0 +1,7 @@
+E:\DarthVader\DarthVader\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\DarthVader\DarthVader\bin\Debug\DarthVader.exe.config
+E:\DarthVader\DarthVader\bin\Debug\DarthVader.exe
+E:\DarthVader\DarthVader\bin\Debug\DarthVader.pdb
+E:\DarthVader\DarthVader\bin\Debug\EntityFramework.xml
+E:\DarthVader\DarthVader\obj\x86\Debug\DarthVader.exe
+E:\DarthVader\DarthVader\obj\x86\Debug\DarthVader.pdb
