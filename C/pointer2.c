@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-int pointer(int *a)
+int pointer(int *a) //recebe o endereço de a
 {
-	printf ("Pointer: %p\n", a);
+	return *a + 10; //retorna o valor no endereco *a + 10
 }
 
 int soma(int a)
@@ -10,7 +10,7 @@ int soma(int a)
 	return a + 2;
 }
 
-main()
+int main()
 {
 	int *a;
 	int b;
@@ -18,7 +18,9 @@ main()
 	b = 2;
 	a = &b;
 	
-	pointer(a);
+	printf("%d\n", pointer(a));
 
-	printf ("Soma: %d",soma(*a));
+	printf ("Soma: %d\n",soma(*a));
+
+	return 0;
 }
