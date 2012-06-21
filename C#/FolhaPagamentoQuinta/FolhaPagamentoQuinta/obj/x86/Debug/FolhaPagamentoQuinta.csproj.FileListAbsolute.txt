@@ -1,0 +1,10 @@
+c:\temp\visual studio 2010\Projects\FolhaPagamentoQuinta\FolhaPagamentoQuinta\bin\Debug\FolhaPagamentoQuinta.exe
+c:\temp\visual studio 2010\Projects\FolhaPagamentoQuinta\FolhaPagamentoQuinta\bin\Debug\FolhaPagamentoQuinta.pdb
+c:\temp\visual studio 2010\Projects\FolhaPagamentoQuinta\FolhaPagamentoQuinta\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\temp\visual studio 2010\Projects\FolhaPagamentoQuinta\FolhaPagamentoQuinta\obj\x86\Debug\FolhaPagamentoQuinta.exe
+c:\temp\visual studio 2010\Projects\FolhaPagamentoQuinta\FolhaPagamentoQuinta\obj\x86\Debug\FolhaPagamentoQuinta.pdb
+E:\novo Sharp\FolhaPagamentoQuinta\FolhaPagamentoQuinta\obj\x86\Debug\FolhaPagamentoQuinta.exe
+E:\novo Sharp\FolhaPagamentoQuinta\FolhaPagamentoQuinta\obj\x86\Debug\FolhaPagamentoQuinta.pdb
+E:\novo Sharp\FolhaPagamentoQuinta\FolhaPagamentoQuinta\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\novo Sharp\FolhaPagamentoQuinta\FolhaPagamentoQuinta\bin\Debug\FolhaPagamentoQuinta.exe
+E:\novo Sharp\FolhaPagamentoQuinta\FolhaPagamentoQuinta\bin\Debug\FolhaPagamentoQuinta.pdb

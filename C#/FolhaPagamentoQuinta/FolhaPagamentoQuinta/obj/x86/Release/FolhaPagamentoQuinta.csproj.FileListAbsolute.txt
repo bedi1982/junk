@@ -1,0 +1,5 @@
+E:\novo Sharp\FolhaPagamentoQuinta\FolhaPagamentoQuinta\bin\Release\FolhaPagamentoQuinta.exe
+E:\novo Sharp\FolhaPagamentoQuinta\FolhaPagamentoQuinta\bin\Release\FolhaPagamentoQuinta.pdb
+E:\novo Sharp\FolhaPagamentoQuinta\FolhaPagamentoQuinta\obj\x86\Release\ResolveAssemblyReference.cache
+E:\novo Sharp\FolhaPagamentoQuinta\FolhaPagamentoQuinta\obj\x86\Release\FolhaPagamentoQuinta.exe
+E:\novo Sharp\FolhaPagamentoQuinta\FolhaPagamentoQuinta\obj\x86\Release\FolhaPagamentoQuinta.pdb
