@@ -17,11 +17,9 @@ namespace DarthVader.DAO
         /////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////
         
-        public static List<Emprestimo> Lista()
-        { //Retorna uma lista com todos os jogos no banco
-
+        public static List<Emprestimo> Lista() //Retorna a lista de emprestados
+        { 
             DarthVaderEntities db = SingletonObjectContext.Instance.Context; //banco up
-            
             List<Emprestimo> lista = new List<Emprestimo>(); //lista de Emprestimo
 
             try
@@ -34,6 +32,28 @@ namespace DarthVader.DAO
                 Console.WriteLine("BUAAAAA");
                 return null;
            }
+        }
+
+        /////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////
+
+        public static string Consulta_RG(int rg)
+        { 
+            DarthVaderEntities db = SingletonObjectContext.Instance.Context;
+            Emprestimo consulta = new Emprestimo();
+            try
+            {
+                consulta = db.Emprestimos.FirstOrDefault(x => consulta.rg.Equals(rg));
+                if (consulta != null) {
+                    return consulta.nome;
+                }
+                return null;
+            }
+            catch
+            {
+                Console.WriteLine("Catcheou");
+                return null;
+            }
         }
     }
 }

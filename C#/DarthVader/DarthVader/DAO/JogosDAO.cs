@@ -22,16 +22,16 @@ namespace DarthVader.DAO
         public static Jogo search(Jogo jogo)
         {
             DarthVaderEntities db = SingletonObjectContext.Instance.Context;
-            //try
-            //{
+            try
+            {
                 jogo = db.Jogos.FirstOrDefault(x => x.titulo.Contains(jogo.titulo));
                 return jogo;
-            //}
-            //catch
-            //{
-             //   Console.WriteLine("Catcheou");
-              //  return null;
-            //}
+            }
+            catch
+            {
+                Console.WriteLine("Catcheou");
+                return null;
+            }
         }
 
         /////////////////////////////////////////////////////////////////////////////
@@ -47,12 +47,7 @@ namespace DarthVader.DAO
             try
             {
                 foreach (Jogo x in db.Jogos)
-                { //Thanks google :) - Cria uma lista a partir do bd.
-                    //Console.WriteLine("LALALLLALALLAL");
-                    //db.Jogos.Remove(x); // DANGER: Limpa o banco
-                    //db.SaveChanges(); // DANGER: Limpa o banco
-                    //db.Database.Delete();
-                    
+                { 
                     if (x.emprestado == false)
                     {
                        jogos.Add(x);
@@ -72,6 +67,8 @@ namespace DarthVader.DAO
         public static Jogo Toggler(Jogo jogo) //Marca true ou falso para emprestado
         {
             DarthVaderEntities db = SingletonObjectContext.Instance.Context;
+            Console.WriteLine("VEIO: " + jogo.titulo);
+
             if (!jogo.emprestado) //Se é falso (Não emprestado)
             {
                 jogo = db.Jogos.FirstOrDefault(x => x.id.Equals(jogo.id));

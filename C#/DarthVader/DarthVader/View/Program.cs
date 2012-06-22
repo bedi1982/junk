@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using DarthVader.Model;
 using DarthVader.DAO;
 
+//Uteis:
+//Para reseter uma tabela do banco, inclusive Ids:
+//truncate table nomedatabela
+
 namespace DarthVader.View
 {
     class Program
@@ -35,9 +39,9 @@ namespace DarthVader.View
                     case 6:
                         EmprestarJogo();
                         break;
-                    //case 7:
-                    //   Devolucao();
-                    //  break;
+                    case 7:
+                       Devolucao();
+                      break;
                     //case 8:
                     //   Lista_Valor_de_todos_os_jogos();
                     //  break;
@@ -80,8 +84,10 @@ namespace DarthVader.View
 
             JogosDAO.Insert(jogo);
         }
+
         /////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////
+
             public static void EmprestarJogo()
         {
             Jogo jogo = new Jogo();
@@ -101,20 +107,98 @@ namespace DarthVader.View
                     Emprestimo emprestar = new Emprestimo(); //Ja que tem o jogo, criamos o objeto do emprestimo
                     emprestar.jogo = jogo; //Emprestimos.Jogos_ID recebe o jogo
 
-                    Console.WriteLine("Qual o seu nome?");
+                    Console.WriteLine("Qual o seu nome? ");
                     emprestar.nome = Console.ReadLine();
 
-                    Console.WriteLine("Qual o seu RG?");
+                    Console.WriteLine("Qual o seu RG? ");
                     emprestar.rg = int.Parse(Console.ReadLine());
 
                     emprestar.data_do_emprestimo = DateTime.Now;
                     EmprestimosDAO.Insert(emprestar);
+
+                    Console.WriteLine("Adicionado.");
                 }
             }
             else {
-                Console.WriteLine("Jogo não cadastrado");
+                Console.WriteLine("Jogo não cadastrado, ou não tenho na coleção");
             }
         }
+
+            /////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////
+
+            public static void Devolucao()
+            {
+
+                //Crio uma lista com quem emprestou e o que//
+                List<Emprestimo> emprestados = new List<Emprestimo>();
+                emprestados = EmprestimosDAO.Lista();
+
+                Console.WriteLine("Qual seu RG?");
+                int rg = int.Parse(Console.ReadLine());
+
+                //So pra escrever o nome da pessoa
+                string rg_pertence_a = EmprestimosDAO.Consulta_RG(rg);
+                if (rg_pertence_a != null) //Se o RG tem emprestimo//
+                    Console.WriteLine(rg_pertence_a + "Está com: ");
+
+                //Cria um indice pro cara poder devoilver com numero imprimido//
+
+                int i = 0;
+                string quem = ""; //da pau se não inicializar
+                String[] jogos = new String[10];
+
+                foreach (Emprestimo x in emprestados)
+                {
+                    if (x.jogo.emprestado == true) //Se está emprestado
+                    {
+                        if (x.rg.Equals(rg)) //Se o RG bate
+                        {
+                            jogos[i] = x.jogo.titulo; //a lista recebeo nome do jogo//
+                            quem = x.nome; //não faz mal se sobrescrever, ja que o rg é único//
+                            i++;
+                        }
+                    }
+                }
+
+                Console.WriteLine("");//dar uma limpada na tela//
+
+                if (i != 0)
+                {
+                    Console.WriteLine(quem + " está com:");
+                }
+
+                i = 0; //Zeramos//
+                foreach (string x in jogos)
+                {
+                    if (x != null)
+                    {
+                        i++;
+                        System.Console.WriteLine(i + " - " + x); //Indice mais nome do jogo
+                    }
+                }
+
+                if (i != 0)
+                {
+                    Console.WriteLine("Insira o numero de qual vai devolver");
+                    int escolha = int.Parse(Console.ReadLine());
+
+                    //Crio o objeto porque o JogosDAO.toggler espera um e uso ele pra mais coisas//
+                    Jogo devolvendo = new Jogo(); //Crio um objeto
+
+                    devolvendo.titulo = jogos[escolha]; //Adiciono o titulo
+
+                    Console.WriteLine("Vai pra la: " + devolvendo.titulo); //teste
+
+                    devolvendo = JogosDAO.search(devolvendo); //Preencho o objeto com o objeto que virá baseado no título
+                    JogosDAO.Toggler(devolvendo); //Altero pra False o atributo 'emprestad'
+                }
+                else
+                {
+                    Console.WriteLine("Sem jogos para devolver");
+                }
+            }
+
 
         /////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////
@@ -122,28 +206,26 @@ namespace DarthVader.View
         public static void Lista_Jogos_Emprestados()
         {
             List<Emprestimo> emprestados = new List<Emprestimo>();
-            emprestados = EmprestimosDAO.Lista();
 
-            if (emprestados != null)
-            {
+            emprestados = EmprestimosDAO.Lista();   
                 foreach (Emprestimo x in emprestados)
                 {
-                    Console.WriteLine("");
-                    Console.WriteLine("-----------------------");
-                    Console.WriteLine("Nome: " + x.nome);
-                    Console.WriteLine("Plataforma : " + x.jogo.plataforma);
-                    Console.WriteLine("Título: " + x.jogo.titulo);
-                    Console.WriteLine("Adicionado em " + x.jogo.data_cadastro);
-                    Console.WriteLine("Emprestei em " + x.data_do_emprestimo);
-                    Console.WriteLine("-----------------------");
-                    Console.WriteLine("");
+                    if (x.jogo.emprestado == true)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("-----------------------");
+                        Console.WriteLine("Nome: " + x.nome);
+                        Console.WriteLine("Rg: " + x.rg);
+                        Console.WriteLine("Plataforma : " + x.jogo.plataforma);
+                        Console.WriteLine("Título: " + x.jogo.titulo);
+                        Console.WriteLine("Adicionado em " + x.jogo.data_cadastro);
+                        Console.WriteLine("Emprestei em " + x.data_do_emprestimo);
+                        Console.WriteLine("-----------------------");
+                        Console.WriteLine("");
+                    }
                 }
             }
-            else
-            {
-                Console.WriteLine("Lista de emprestados vazia... good!\n");
-            }
-        }
+
         /////////////////////////////////////////////////////////////////////////////        
         /////////////////////////////////////////////////////////////////////////////
         public static void Lista_Jogos_em_Casa()
@@ -178,15 +260,17 @@ namespace DarthVader.View
 
         public static void Menu()
         {
+            Console.WriteLine("");
             Console.WriteLine("1 - Adicionar jodo de PS3 à Coleção");
             Console.WriteLine("2 - Adicionar jogo de Xbox 360 à Coleção");
             Console.WriteLine("3 - Listar todos os jogos que estão em casa");
             Console.WriteLine("4 - Listar todos os jogos emprestados");
             //Console.WriteLine("5 - Consultar jogos que emprestei pra alguém por RG");
             Console.WriteLine("6 - Emprestar Jogo Para alguém");
-            //Console.WriteLine("7 - Alguém quer devolver um jogo");
+            Console.WriteLine("7 - Alguém quer devolver um jogo");
             //Console.WriteLine("8 - Listar valor total de todos os meus jogos, inclusive os emprestados");
             Console.WriteLine("9 - Sair");
+            Console.WriteLine("");
         }
     }
 }
