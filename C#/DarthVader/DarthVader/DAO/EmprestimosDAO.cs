@@ -37,23 +37,26 @@ namespace DarthVader.DAO
         /////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////
 
-        public static string Consulta_RG(int rg)
-        { 
+        public static string Retorna_Nome_Se_Rg_tem_emprestados(int rg)
+        {
             DarthVaderEntities db = SingletonObjectContext.Instance.Context;
-            Emprestimo consulta = new Emprestimo();
-            try
-            {
-                consulta = db.Emprestimos.FirstOrDefault(x => consulta.rg.Equals(rg));
-                if (consulta != null) {
-                    return consulta.nome;
+                try
+                {
+                    foreach (Emprestimo x in db.Emprestimos)
+                    {
+                        if (x.rg.Equals(rg))
+                        {
+                            return x.nome;
+                        }
+                    }
+                    return null;
                 }
-                return null;
+                catch
+                {
+                    return null;
+                }
             }
-            catch
-            {
-                Console.WriteLine("Catcheou");
-                return null;
-            }
-        }
+
+
     }
 }

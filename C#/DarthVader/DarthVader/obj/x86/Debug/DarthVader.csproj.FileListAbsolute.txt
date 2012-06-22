@@ -12,3 +12,7 @@ C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Proje
 C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\bin\Debug\DarthVader.pdb
 C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\bin\Debug\EntityFramework.xml
 C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\DarthVader.Properties.Resources.resources
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\DarthVader.View.frm_Main.resources
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\GenerateResource.write.1.tlog

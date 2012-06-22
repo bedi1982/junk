@@ -22,17 +22,23 @@ namespace DarthVader.DAO
         public static Jogo search(Jogo jogo)
         {
             DarthVaderEntities db = SingletonObjectContext.Instance.Context;
-            try
-            {
-                jogo = db.Jogos.FirstOrDefault(x => x.titulo.Contains(jogo.titulo));
-                return jogo;
+                try
+                {
+                    foreach (Jogo x in db.Jogos)
+                    {
+                        if (x.titulo.Equals(jogo.titulo))
+                        {
+                            Console.WriteLine("Search devolvendo: " + x.titulo);
+                            return x;
+                        }
+                    }
+                    return null;
+                }
+                catch
+                {
+                    return null;
+                }
             }
-            catch
-            {
-                Console.WriteLine("Catcheou");
-                return null;
-            }
-        }
 
         /////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using DarthVader.Model;
 using DarthVader.DAO;
+using System.Drawing;
+using System.Windows.Forms;
 
 //Uteis:
 //Para reseter uma tabela do banco, inclusive Ids:
@@ -13,6 +15,10 @@ namespace DarthVader.View
     {
         static void Main(string[] args)
         {
+            Application.EnableVisualStyles(); // <– ADD THIS LINE
+            Application.Run(new frm_Main()); // <– ADD THIS LINE
+            // your existing code goes here (if any)
+
             int escolha;
             do
             {
@@ -70,19 +76,34 @@ namespace DarthVader.View
             Console.WriteLine("Título do Jogo?");
             jogo.titulo = Console.ReadLine();
 
-            //Adicionar bloco que verifica se o jogo ja está na coleção
+            //Verifica se esse jogo ja esta cadastrado nessa plataforma//
+            //É possível cadastrar ele na outra plataforma mas nã ona mesma//
+            Jogo jogotmp = new Jogo();
+            jogotmp = JogosDAO.search(jogo);
+            if (jogotmp != null && jogotmp.plataforma.Equals(jogo.plataforma))
+            {
+                Console.WriteLine("Este jogo já consta como cadastrado na plataforma " + jogo.plataforma);
+            }
 
-            Console.WriteLine("Ano de Lançamento?");
-            jogo.ano = int.Parse(Console.ReadLine());
+            else
+            {
+                Console.WriteLine("Quantas copias você tem?");
+                jogo.quantidade = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Quanto pagou neste jogo?");
-            jogo.custo = float.Parse(Console.ReadLine());
+                //Adicionar bloco que verifica se o jogo ja está na coleção
 
-            jogo.emprestado = false; //Não emprestado
+                Console.WriteLine("Ano de Lançamento?");
+                jogo.ano = int.Parse(Console.ReadLine());
 
-            jogo.data_cadastro = DateTime.Now;
+                Console.WriteLine("Quanto pagou neste jogo?");
+                jogo.custo = float.Parse(Console.ReadLine());
 
-            JogosDAO.Insert(jogo);
+                jogo.emprestado = false; //Não emprestado
+
+                jogo.data_cadastro = DateTime.Now;
+
+                JogosDAO.Insert(jogo);
+            }
         }
 
         /////////////////////////////////////////////////////////////////////////////
@@ -129,73 +150,78 @@ namespace DarthVader.View
 
             public static void Devolucao()
             {
-
                 //Crio uma lista com quem emprestou e o que//
                 List<Emprestimo> emprestados = new List<Emprestimo>();
                 emprestados = EmprestimosDAO.Lista();
 
                 Console.WriteLine("Qual seu RG?");
+
                 int rg = int.Parse(Console.ReadLine());
 
                 //So pra escrever o nome da pessoa
-                string rg_pertence_a = EmprestimosDAO.Consulta_RG(rg);
-                if (rg_pertence_a != null) //Se o RG tem emprestimo//
-                    Console.WriteLine(rg_pertence_a + "Está com: ");
-
-                //Cria um indice pro cara poder devoilver com numero imprimido//
-
-                int i = 0;
-                string quem = ""; //da pau se não inicializar
-                String[] jogos = new String[10];
-
-                foreach (Emprestimo x in emprestados)
+                string nome = EmprestimosDAO.Retorna_Nome_Se_Rg_tem_emprestados(rg);
+                
+                if (nome != null)//Se o RG tem emprestimo//
                 {
-                    if (x.jogo.emprestado == true) //Se está emprestado
+                    Console.WriteLine("Este cara não tem jogos em seu nome");
+                }else{
+                    Console.WriteLine("Está com: " + nome );
+                    //Cria um indice pro cara poder devoilver com numero imprimido//
+
+                    int i = 0;
+                    string quem = ""; //da pau se não inicializar
+                    String[] jogos = new String[10];
+
+                    foreach (Emprestimo x in emprestados)
                     {
-                        if (x.rg.Equals(rg)) //Se o RG bate
+                        if (x.jogo.emprestado == true) //Se está emprestado
                         {
-                            jogos[i] = x.jogo.titulo; //a lista recebeo nome do jogo//
-                            quem = x.nome; //não faz mal se sobrescrever, ja que o rg é único//
-                            i++;
+                            if (x.rg.Equals(x.rg)) //Se o RG bate
+                            {
+                                jogos[i] = x.jogo.titulo; //a lista recebeo nome do jogo//
+                                quem = x.nome; //não faz mal se sobrescrever, ja que o rg é único//
+                                i++;
+                            }
                         }
                     }
-                }
 
-                Console.WriteLine("");//dar uma limpada na tela//
+                    Console.WriteLine("");//dar uma limpada na tela//
 
-                if (i != 0)
-                {
-                    Console.WriteLine(quem + " está com:");
-                }
-
-                i = 0; //Zeramos//
-                foreach (string x in jogos)
-                {
-                    if (x != null)
+                    if (i == 0)
                     {
-                        i++;
-                        System.Console.WriteLine(i + " - " + x); //Indice mais nome do jogo
+                        Console.WriteLine(quem + " está com:");
                     }
-                }
 
-                if (i != 0)
-                {
-                    Console.WriteLine("Insira o numero de qual vai devolver");
-                    int escolha = int.Parse(Console.ReadLine());
+                    i = 0; //Zeramos//
+                    foreach (string x in jogos)
+                    {
+                        if (x != null)
+                        {
+                            i++;
+                            //Que xunxo desgraçaco!//
+                            System.Console.WriteLine(i - 1 + " - " + x); //Indice mais nome do jogo
+                        }
+                    }
 
-                    //Crio o objeto porque o JogosDAO.toggler espera um e uso ele pra mais coisas//
-                    Jogo devolvendo = new Jogo(); //Crio um objeto
+                    if (jogos != null)
+                    {
+                        Console.WriteLine("Insira o numero de qual vai devolver");
+                        int escolha = int.Parse(Console.ReadLine());
 
-                    devolvendo.titulo = jogos[escolha]; //Adiciono o titulo
+                        //Crio o objeto porque o JogosDAO.toggler espera um e uso ele pra mais coisas//
+                        Jogo devolvendo = new Jogo(); //Crio um objeto
 
-                    Console.WriteLine("Vai pra la: " + devolvendo.titulo); //teste
+                        Console.WriteLine("Devolvendo.Titulo recebendo " + devolvendo.titulo); //teste
+                        devolvendo.titulo = jogos[escolha]; //Adiciono o titulo
+                        Console.WriteLine("Vai pra la: " + devolvendo.titulo); //teste
 
-                    devolvendo = JogosDAO.search(devolvendo); //Preencho o objeto com o objeto que virá baseado no título
-                    JogosDAO.Toggler(devolvendo); //Altero pra False o atributo 'emprestad'
-                }
-                else
-                {
-                    Console.WriteLine("Sem jogos para devolver");
+                        devolvendo = JogosDAO.search(devolvendo); //Preencho o objeto com o objeto que virá baseado no título
+                        JogosDAO.Toggler(devolvendo); //Altero pra False o atributo 'emprestad'
+                    }
+                    else
+                    {
+                        Console.WriteLine("Sem jogos para devolver");
+                    }
                 }
             }
 
@@ -272,5 +298,6 @@ namespace DarthVader.View
             Console.WriteLine("9 - Sair");
             Console.WriteLine("");
         }
+
     }
 }
