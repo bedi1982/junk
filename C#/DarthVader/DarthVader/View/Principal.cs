@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DarthVader.Model;
+using DarthVader.DAO;
 
 namespace DarthVader.View
 {
@@ -29,6 +31,16 @@ namespace DarthVader.View
         private void btn_AtualizarEmprestadosEJogosEmCasa_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Sair_Click(object sender, EventArgs e)
+        {
+            Close();
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
         }
     }
 }

@@ -28,7 +28,7 @@ namespace DarthVader.DAO
                     {
                         if (x.titulo.Equals(jogo.titulo))
                         {
-                            Console.WriteLine("Search devolvendo: " + x.titulo);
+                            //Console.WriteLine("Search retornando: " + x.titulo);
                             return x;
                         }
                     }
@@ -73,7 +73,7 @@ namespace DarthVader.DAO
         public static Jogo Toggler(Jogo jogo) //Marca true ou falso para emprestado
         {
             DarthVaderEntities db = SingletonObjectContext.Instance.Context;
-            Console.WriteLine("VEIO: " + jogo.titulo);
+            //Console.WriteLine("VEIO: " + jogo.titulo);
 
             if (!jogo.emprestado) //Se é falso (Não emprestado)
             {
