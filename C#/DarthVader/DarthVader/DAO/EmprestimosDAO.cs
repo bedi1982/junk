@@ -29,7 +29,6 @@ namespace DarthVader.DAO
             }
             catch
             {
-                Console.WriteLine("BUAAAAA");
                 return null;
            }
         }

@@ -73,5 +73,12 @@ namespace DarthVader.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        internal static System.Drawing.Bitmap game_icon {
+            get {
+                object obj = ResourceManager.GetObject("game_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

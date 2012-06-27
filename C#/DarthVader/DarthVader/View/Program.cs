@@ -16,10 +16,14 @@ namespace DarthVader.View
         static void Main(string[] args)
         {
             Application.EnableVisualStyles(); // <– ADD THIS LINE
+            Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frm_Main()); // <– ADD THIS LINE
             // your existing code goes here (if any)
+        }
+    }
+}
 
-            int escolha;
+            /*int escolha;
                 do
                 {
                     Menu(); //Só imprime o menu//
@@ -295,4 +299,4 @@ namespace DarthVader.View
         }
 
     }
-}
+}*/
