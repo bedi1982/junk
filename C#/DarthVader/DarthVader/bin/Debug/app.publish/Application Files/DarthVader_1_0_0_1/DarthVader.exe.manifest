@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
+  <asmv1:assemblyIdentity name="DarthVader.exe" version="1.0.0.1" publicKeyToken="752ffaa42d617506" language="neutral" processorArchitecture="x86" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="DarthVader" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="DarthVader.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DarthVader.exe" size="150528">
+      <assemblyIdentity name="DarthVader" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>9W3/jp8m9BUk4E/PRXpziIOOWx0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.dll" size="792880">
+      <assemblyIdentity name="EntityFramework" version="4.1.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>o1DGTCSY8Bs56OM+PtPd961RVos=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="DarthVader.exe.config" size="458">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>XrGCxJi4UYPuuoRMX5Ljw3cidds=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=BEDIXP\Administrador" issuerKeyHash="fb27a625fdf9d0c64828f0f3d2ee5be2857c51c8" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>oCHkRWz7qo22gQXbJKkteggPFXw=</DigestValue></Reference></SignedInfo><SignatureValue>pkhd3UDlI6tNV1FpRKPLStxutoPo9CzSRFZMUtocL207fCqP8nCRVSVKgTx8j7m7AF3m+4cHG3ueSXncZPIGZEPbalWvDfHHyZz0WqFsJGUl8EqNiFqNdSxvpeh7+5fHZY9XPnS3CCVFoqgsmqRg1yy/DQmu7ACdZiylr0c/stA=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>sazvDKSGPCZ+zBV4XtF2Fge7oMimRcEO4Ogyd+9tZnQgnMu7DuzaH2G/quzAL5l4OROnEOvwwlE3mmLyUSwAZ1kjoo9cZ9df+d0SBY3JeQldiWZZTCaJVw6o+OhiuKxvTT/pje+JWI5a5+Ec1G/Ki0myTsCeWYuNinmVnyUoruk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="7c150f087a2da924db0581b68daafb6c45e421a0" Description="" Url=""><as:assemblyIdentity name="DarthVader.exe" version="1.0.0.1" publicKeyToken="752ffaa42d617506" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=BEDIXP\Administrador</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>2EUCaQ7YnRvDqgajPwKSoY3CpOI=</DigestValue></Reference></SignedInfo><SignatureValue>k169dOZVhW9rTVcFWHCpHfxoezbEGWsu9Xi9Obm1MBwgxshrbZegrvOq5cztXsyXDTnMcuEyMcSljLKUBHHZY9Td/r4br72zIsvuhY3BLQ3VREv/r4UmDhXgMqcBUfGn90yztkw+pvK6lyi1n6Wpq0+HI/kZctJDua6T8SLyaTo=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>sazvDKSGPCZ+zBV4XtF2Fge7oMimRcEO4Ogyd+9tZnQgnMu7DuzaH2G/quzAL5l4OROnEOvwwlE3mmLyUSwAZ1kjoo9cZ9df+d0SBY3JeQldiWZZTCaJVw6o+OhiuKxvTT/pje+JWI5a5+Ec1G/Ki0myTsCeWYuNinmVnyUoruk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB4TCCAU6gAwIBAgIQX+DEgZm7A69CfYp4UQFhnTAJBgUrDgMCHQUAMDMxMTAvBgNVBAMeKABCAEUARABJAFgAUABcAEEAZABtAGkAbgBpAHMAdAByAGEAZABvAHIwHhcNMTIwNjI5MTk1NjM5WhcNMTMwNjMwMDE1NjM5WjAzMTEwLwYDVQQDHigAQgBFAEQASQBYAFAAXABBAGQAbQBpAG4AaQBzAHQAcgBhAGQAbwByMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCxrO8MpIY8Jn7MFXhe0XYWB7ugyKZFwQ7g6DJ3721mdCCcy7sO7NofYb+q7MAvmXg5E6cQ6/DCUTeaYvJRLABnWSOij1xn11/53RIFjcl5CV2JZllMJolXDqj46GK4rG9NP+mN74lYjlrn4RzUb8qLSbJOwJ5Zi42KeZWfJSiu6QIDAQABMAkGBSsOAwIdBQADgYEAKUKIu7hEt7dqe1agzUB/8AiR6eqlVugMSPI3zrcjieyKpSFygdija2KOPvYRU0gKcU6x0UGDYQGwcDP8t8l1GBSYvGCrXcvaF384XHjLa4D18Lnr1RCxCzedp3o7B5Vs2hfDOUlOrb/7WNRVq8FxhIMxu2Mh9qUvrCyojqdoW7w=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

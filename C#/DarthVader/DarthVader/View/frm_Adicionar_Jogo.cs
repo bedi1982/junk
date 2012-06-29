@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using DarthVader.Model;
 using DarthVader.DAO;
@@ -20,26 +14,14 @@ namespace DarthVader.View
             InitializeComponent();
         }
         
-        private void radiobtn_Xbox360_CheckedChanged(object sender, EventArgs e)
-        {
-            escolha = 0;
-            //MessageBox.Show("escolha: " + escolha);
-        }
-
-        private void radiobtn_PS3_CheckedChanged(object sender, EventArgs e)
-        {
-            escolha = 1;
-            //MessageBox.Show("escolha: " + escolha);
-        }
-
+        ////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////
         private void btn_Adicionar_Click(object sender, EventArgs e)
         {
             try
             {
                 if ((escolha != 1) && (escolha != 0))
                 {
-                    //googled://
-                    //MessageBox.Show("escolha: " + escolha);
                     throw new System.ArgumentException("Selecione uma plataforma!");
                 }
                 
@@ -53,32 +35,61 @@ namespace DarthVader.View
                 {
                     jogo.plataforma = "Xbox 360"; //Ja adicionando a plataforma.
                 }
+
                 jogo.titulo = txt_NomeDoJogo.Text;
                 jogo.quantidade = int.Parse(txt_Quantidade.Text);
-                jogo.ano = int.Parse(txt_AnoLancamento.Text);
-                jogo.custo = float.Parse(txt_Custo.Text);
-                MessageBox.Show("Valor passado: " + jogo.custo);
+                jogo.ano = int.Parse(mkd_txtbox_AnoLancamento.Text);
+                jogo.custo = float.Parse(txt_Custo.Text.Replace(".",","));
                 jogo.emprestado = false; //Não emprestado por padrão
                 jogo.data_cadastro = DateTime.Now;
                 JogosDAO.Insert(jogo);
+   
+                // Invoke an anonymous method on the thread of the form.
+                //this.Invoke((MethodInvoker) delegate
+                //{
+                //});
+
                 MessageBox.Show("Jogo adicionado a coleção!", "Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Limpeza_do_form(sender, e);
+                Limpeza_do_form();
+
+            } catch(Exception ex) {
+                MessageBox.Show(ex.Message, "Você inseriu dados de forma errada.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch(SystemException ex) {
-                MessageBox.Show(ex.Message, "Dados Inválidos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }   
         }
 
-        private void Limpeza_do_form(object sender, EventArgs e) {
+        ////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////
+
+        private void Limpeza_do_form() {
             txt_NomeDoJogo.Clear();
             txt_Quantidade.Clear();
-            txt_AnoLancamento.Clear();
+            mkd_txtbox_AnoLancamento.Clear();
             txt_Custo.Clear();
+            mkd_txtbox_AnoLancamento.Text = "2012";
         }
-
+        
+        ////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////
+        
         private void btn_Sair_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        ////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////
+
+        private void radiobtn_Xbox360_CheckedChanged(object sender, EventArgs e)
+        {
+            escolha = 0;
+        }
+
+        ////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////
+
+        private void radiobtn_PS3_CheckedChanged(object sender, EventArgs e)
+        {
+            escolha = 1;
         }
     }
 }

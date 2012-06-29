@@ -60,6 +60,13 @@ namespace DarthVader.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap _33093_star_wars_clone_wars_plo_koon_lightsaber {
+            get {
+                object obj = ResourceManager.GetObject("33093-star-wars-clone-wars-plo-koon-lightsaber", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap darth_vader {
             get {
                 object obj = ResourceManager.GetObject("darth_vader", resourceCulture);
@@ -77,6 +84,20 @@ namespace DarthVader.Properties {
         internal static System.Drawing.Bitmap game_icon {
             get {
                 object obj = ResourceManager.GetObject("game_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap i_am_your_father_by_dormas_d38orih {
+            get {
+                object obj = ResourceManager.GetObject("i_am_your_father_by_dormas-d38orih", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap iamyourfather {
+            get {
+                object obj = ResourceManager.GetObject("iamyourfather", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

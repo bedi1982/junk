@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using DarthVader.Model;
+using System;
 
 namespace DarthVader.DAO
 {
@@ -16,46 +16,84 @@ namespace DarthVader.DAO
         
         /////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////
-        
-        public static List<Emprestimo> Lista() //Retorna a lista de emprestados
-        { 
-            DarthVaderEntities db = SingletonObjectContext.Instance.Context; //banco up
-            List<Emprestimo> lista = new List<Emprestimo>(); //lista de Emprestimo
 
-            try
+        public static Emprestimo search(Emprestimo emprestimo)
+        {
+            DarthVaderEntities db = SingletonObjectContext.Instance.Context;
+            //try
+            //{
+            foreach (Emprestimo x in db.Emprestimos)
             {
-                lista = db.Emprestimos.Include("jogo").ToList();
-                return lista;
+                if (x.id.Equals(emprestimo.id))
+                {
+                    //Ainda uso o console para debug//
+                    //Console.WriteLine("Search retornando: " + x.titulo);
+                    return x;
+                }
             }
-            catch
-            {
-                return null;
-           }
+            return null;
         }
 
         /////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////
 
-        public static string Retorna_Nome_Se_Rg_tem_emprestados(int rg)
+        public static bool Delete(Emprestimo emprestimo)
         {
             DarthVaderEntities db = SingletonObjectContext.Instance.Context;
-                try
+            try
+            {
+                foreach (Emprestimo x in db.Emprestimos)
                 {
-                    foreach (Emprestimo x in db.Emprestimos)
+                    if (x.id.Equals(emprestimo.id))
                     {
-                        if (x.rg.Equals(rg))
-                        {
-                            return x.nome;
-                        }
+                        emprestimo = x;
+                        break;
                     }
-                    return null;
                 }
-                catch
-                {
-                    return null;
-                }
+                //necessário senão banco reclama de threads extras//
+                db.Emprestimos.Remove(emprestimo);
+                db.SaveChanges();
+                return true; //fazer o retorno feliz
             }
+            catch
+            {
+                return false;
+            }
+        }
 
+        /////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////
 
+        public static List<Emprestimo> Lista() //Retorna a lista de emprestados
+        {
+            List<Emprestimo> lista = new List<Emprestimo>(); //lista de Emprestimo
+            DarthVaderEntities db = SingletonObjectContext.Instance.Context; //banco up
+            try
+            {
+                lista = db.Emprestimos.Include("jogo").ToList();
+
+                //Lista Nova filtrando//
+                List<Emprestimo> emprestimos = new List<Emprestimo>();
+                int i = 0;
+                //Filtro//
+                foreach (Emprestimo x in lista)
+                {
+                    if (x.jogo.emprestado == true)
+                    {
+                        i++;
+                        emprestimos.Add(x);
+                    }
+                }
+                if (i == 0)
+                {
+                    lista = null;
+                }
+                return lista;
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace DarthVader.Model
 {
-    class Jogo //Dados do jogo e video game
+    class Jogo //Dados do jogo e plataforma
     {
         public int id { set; get; }
         public string titulo { set; get; }

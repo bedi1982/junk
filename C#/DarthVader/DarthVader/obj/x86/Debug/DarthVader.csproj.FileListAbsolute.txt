@@ -18,3 +18,20 @@ C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Proje
 C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\DarthVader.View.frm_Adicionar_Jogo.resources
 C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\DarthVader.View.frm_emprestar_jogo.resources
+E:\DarthVader\DarthVader\bin\Debug\EntityFramework.dll
+E:\DarthVader\DarthVader\obj\x86\Debug\DarthVader.Properties.Resources.resources
+E:\DarthVader\DarthVader\obj\x86\Debug\DarthVader.View.frm_Adicionar_Jogo.resources
+E:\DarthVader\DarthVader\obj\x86\Debug\DarthVader.View.frm_emprestar_jogo.resources
+E:\DarthVader\DarthVader\obj\x86\Debug\DarthVader.View.frm_Main.resources
+E:\DarthVader\DarthVader\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\DarthVader\DarthVader\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\DarthVader.View.frm_Excluir_Jogo.resources
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\DarthVader.View.frm_Devolucao.resources
+E:\DarthVader\DarthVader\obj\x86\Debug\DarthVader.View.frm_Devolucao.resources
+E:\DarthVader\DarthVader\obj\x86\Debug\DarthVader.View.frm_Excluir_Jogo.resources
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\bin\Debug\DarthVader.exe.manifest
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\bin\Debug\DarthVader.application
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\DarthVader.exe.manifest
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\DarthVader.application
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\DarthVader.View.frm_DarthVader.resources
+C:\Documents and Settings\Administrador\Meus documentos\Visual Studio 2010\Projects\DarthVader\DarthVader\obj\x86\Debug\DarthVader.View.frm_sobre.resources

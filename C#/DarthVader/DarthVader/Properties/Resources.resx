@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="iamyourfather" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iamyourfather.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="darth_vader" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\darth_vader.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -126,5 +129,11 @@
   </data>
   <data name="game_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\game_icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="i_am_your_father_by_dormas-d38orih" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\i_am_your_father_by_dormas-d38orih.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="33093-star-wars-clone-wars-plo-koon-lightsaber" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\33093-star-wars-clone-wars-plo-koon-lightsaber.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

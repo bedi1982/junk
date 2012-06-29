@@ -6,7 +6,7 @@ namespace DarthVader.Model
     {
         public int id { set; get; }
         public string nome { set; get; } //Para Quem?
-        public int rg { set; get; }
+        public string telefone { set; get; }
         public DateTime data_do_emprestimo { set; get; }
         public virtual Jogo jogo { set; get; }
     }

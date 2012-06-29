@@ -6,13 +6,29 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{C56ACB85-9F2A-42B6-9FF5-2E36204F9E2A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DarthVader</RootNamespace>
     <AssemblyName>DarthVader</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Documents and Settings\Administrador\Meus documentos\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -32,6 +48,24 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3B985209B43211C70ABACF23666D8D60CA0F9067</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DarthVader_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>DarthVader.View.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
@@ -66,17 +100,41 @@
     <Compile Include="View\frm_Adicionar_Jogo.Designer.cs">
       <DependentUpon>frm_Adicionar_Jogo.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frm_emprestar_jogo.cs">
+    <Compile Include="View\frm_DarthVader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frm_emprestar_jogo.Designer.cs">
-      <DependentUpon>frm_emprestar_jogo.cs</DependentUpon>
+    <Compile Include="View\frm_DarthVader.Designer.cs">
+      <DependentUpon>frm_DarthVader.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Principal.cs">
+    <Compile Include="View\frm_Devolucao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Principal.Designer.cs">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <Compile Include="View\frm_Devolucao.Designer.cs">
+      <DependentUpon>frm_Devolucao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frm_Emprestar_jogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frm_Emprestar_jogo.Designer.cs">
+      <DependentUpon>frm_Emprestar_jogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frm_Excluir_Jogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frm_Excluir_Jogo.Designer.cs">
+      <DependentUpon>frm_Excluir_Jogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frm_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frm_Principal.Designer.cs">
+      <DependentUpon>frm_Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frm_sobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frm_sobre.Designer.cs">
+      <DependentUpon>frm_sobre.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,14 +152,27 @@
     <EmbeddedResource Include="View\frm_Adicionar_Jogo.resx">
       <DependentUpon>frm_Adicionar_Jogo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frm_emprestar_jogo.resx">
-      <DependentUpon>frm_emprestar_jogo.cs</DependentUpon>
+    <EmbeddedResource Include="View\frm_DarthVader.resx">
+      <DependentUpon>frm_DarthVader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Principal.resx">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <EmbeddedResource Include="View\frm_Devolucao.resx">
+      <DependentUpon>frm_Devolucao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frm_Emprestar_jogo.resx">
+      <DependentUpon>frm_Emprestar_jogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frm_Excluir_Jogo.resx">
+      <DependentUpon>frm_Excluir_Jogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frm_Principal.resx">
+      <DependentUpon>frm_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frm_sobre.resx">
+      <DependentUpon>frm_sobre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DarthVader_TemporaryKey.pfx" />
     <None Include="Resources\DarthVader.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +180,37 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\game_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iamyourfather.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\i_am_your_father_by_dormas-d38orih.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\33093-star-wars-clone-wars-plo-koon-lightsaber.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
