@@ -16,7 +16,7 @@ namespace DarthVader.View
         
         ////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////
-        private void btn_Adicionar_Click(object sender, EventArgs e)
+        protected void btn_Adicionar_Click(object sender, EventArgs e)
         {
             try
             {

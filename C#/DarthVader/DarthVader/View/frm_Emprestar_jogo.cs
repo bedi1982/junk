@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Threading;
 using DarthVader.Model;
 using DarthVader.DAO;
 
@@ -7,7 +8,8 @@ namespace DarthVader.View
 {
     public partial class frm_Emprestar_jogo : Form
     {
-        Jogo jogo = new Jogo();        
+        Jogo jogo = new Jogo();
+
         public frm_Emprestar_jogo()
         {
             InitializeComponent();
@@ -19,7 +21,7 @@ namespace DarthVader.View
         //////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////
 
-        private void btn_procurar_Click(object sender, EventArgs e)
+        protected void btn_procurar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -98,6 +100,13 @@ namespace DarthVader.View
                         JogosDAO.Toggler(jogo); //Só agora marca como emprestado
                         btn_emprestar.Enabled = false;
                         Limpeza_do_form();
+                        
+                        frm_Main main = new frm_Main();
+                        //main = new frm_Main();
+                        //main.btn_AtualizarEmprestadosEJogosEmCasa_Click(sender, e);
+                        main.frm_Main_Load(sender, e);
+                        
+                        //frm_Main.Invoke(() => frm_Main));
                     }
                     else
                     {

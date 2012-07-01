@@ -62,7 +62,7 @@ namespace DarthVader.View
             btn_AtualizarEmprestadosEJogosEmCasa_Click(sender, e);
         }
 
-        private void btn_AtualizarEmprestadosEJogosEmCasa_Click(object sender, EventArgs e)
+        public void btn_AtualizarEmprestadosEJogosEmCasa_Click(object sender, EventArgs e)
         {
             //////////////////////////Adiciona Jogos em casa a Grid////////////////////////////
             List<Jogo> jogos = new List<Jogo>();
@@ -77,14 +77,16 @@ namespace DarthVader.View
 
             if (jogos != null)
             {
-                int i = 0;
+                double tot_em_casa = 0;
                 foreach (Jogo x in jogos)
                 {
                     Main_dataGrid_JogosEmCasa.Rows.Add(x.id, x.titulo, x.plataforma, x.ano, x.custo, x.quantidade, x.data_cadastro);
-                    i++;
+                    tot_em_casa += x.custo;
                 }
                 btn_Emprestar.Enabled = true;
                 btn_Excluir.Enabled = true;
+                lbl_valor_total_em_casa.Text = tot_em_casa.ToString("C2");
+                //txtMoney.Text = money.ToString("C");
             }
 
             List<Emprestimo> emprestados = new List<Emprestimo>();
@@ -95,13 +97,16 @@ namespace DarthVader.View
             if (emprestados != null)
             {
                 btn_Devolucao.Enabled = true;
+                double tot_em_casa = 0;
                 foreach (Emprestimo x in emprestados)
                 {
                     if (x.jogo.emprestado == true)
                     {
+                        tot_em_casa += x.jogo.custo;
                         Main_dataGrid_JogosEmprestados.Rows.Add(x.id, x.jogo.titulo, x.nome, x.telefone, x.data_do_emprestimo);
                     }
                 }
+                lbl_valor_total_emprestados.Text = tot_em_casa.ToString("C2");
             }
         }
 
@@ -115,6 +120,6 @@ namespace DarthVader.View
         {
             frm_sobre sobre = new frm_sobre();
             sobre.Show();
-        }   
+        }
     }
 }
