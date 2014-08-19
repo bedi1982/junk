@@ -1,0 +1,39 @@
+//Global and Local Vars playground//
+#include <iostream>
+#include <string>
+#include <stdio.h>
+using namespace std;
+
+class Pessoa{
+    private:
+        string nome;
+        int idade;
+    
+    public:
+    Pessoa(){}
+        void setpessoa(string nome, int idade){
+            nome = nome;
+            idade = idade;
+        }
+        
+        string getNome(){
+            return nome;
+        }
+        
+        void print(){
+            cout << "Nome: " << nome << endl;
+            cout << "Idade: " << idade << endl;
+        }
+};
+
+int main(){
+   Pessoa bedi, nino;
+   
+   bedi.setpessoa("bedi", 31);
+   //nino.setpessoa("nino", 97);
+   //nino.setpessoa("Orlando", 97);
+   
+   nino.print();
+   
+   return 0;
+}
