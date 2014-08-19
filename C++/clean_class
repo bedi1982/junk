@@ -28,7 +28,7 @@ class Pessoa{
 int main(){
    Pessoa bedi, nino;
    
-   bedi.setpessoa("bedi", 31);
+   bedi.setpessoa("jose", 31);
    //nino.setpessoa("nino", 97);
    //nino.setpessoa("Orlando", 97);
    
