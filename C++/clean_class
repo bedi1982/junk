@@ -1,38 +1,38 @@
 #include <iostream>
-#include <string>
 #include <stdio.h>
 using namespace std;
 
 class Pessoa{
-    private:
-        string nome;
-        int idade;
-    
-    public:
-    Pessoa(){}
-        void setpessoa(string nome, int idade){
-            nome = nome;
-            idade = idade;
+
+        private:
+                string nome;
+                int idade;
+
+        public: 
+                Pessoa(string nome, int idade){
+                        this->nome = nome;
+                        this->idade = idade;
+                }
+
+        int getIdade(){
+                return idade;
         }
-        
+
         string getNome(){
-            return nome;
-        }
-        
-        void print(){
-            cout << "Nome: " << nome << endl;
-            cout << "Idade: " << idade << endl;
+                return nome;
         }
 };
 
-int main(){
-   Pessoa bedi, nino;
-   
-   bedi.setpessoa("jose", 31);
-   //nino.setpessoa("nino", 97);
-   //nino.setpessoa("Orlando", 97);
-   
-   nino.print();
-   
-   return 0;
+        int main(){
+                int i;
+                int j = 0;
+
+                for (i = 0; i <= 20; i++){
+                        Pessoa i("\nObjeto: ", j);
+                        cout << i.getNome();
+                        cout << i.getIdade();
+                        j++;
+                }
+
+                return 0;
 }
