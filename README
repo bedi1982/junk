@@ -1,10 +1,13 @@
 It's all yours.
 
-You find a lot of codes in C and C#, most academyc but I also wrote some for other training purposes, 
-like a snake game, a words mixer code and a plugins installer for some Linux distros.
-Plugins install app also received a interface, which i firstly started using raw GTK but later I found
-out it would be easier using glade.
+You will find a lot of code in C, C++ and C#, mostly for basic concepts training purposes.
 
-In C# there is a huge one for finantial control on pharmacy chain networks.
+There is a snake game and a words mixer code in C, mostly to train string/char manipulation, 
+there is also a Plugins installer for some Linux distros. That Plugins install app also
+received an interface, which was firstly writed using raw GTK but later 'constructed' using 
+Glade.
+
+In C# there is TrackingTool, a huge application for finantial control on Pharmacy chain networks 
+used as final project for my degree.
 
 As I said, it's all yours if you find some utility for ir :)
