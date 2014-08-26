@@ -21,9 +21,12 @@ op = raw_input('Insert 1 to Import. Insert 2 to Export.\n')
 if op.isdigit():
         if(op == '1'):
                 print 'Import selected.\n'
+                import_into_SIT()
+                
         elif(op == '2'):
                 print 'Export selected.\n'
                 export_from_DEV()
+                
         elif((op < 0) or (op > 2)):
                 print 'Invalid Option, exiting.\n'
                 sys.exit(0)
