@@ -1,17 +1,18 @@
 import os, sys
 ###########SOME FUNCTIONS###################################
-def export_from_dev():
+def export_from_DEV():
         rtc = raw_input('Insert RTC number\n')
 
-##Create the premium folder in tmp if it not exists:
         if not os.path.exists('/tmp/premium/'):
                 print '/tmp/premium folder not exists, -not a problem, creating and proceeding...\n'
                 os.makedirs('/tmp/premium/')
-###################################################
 
         path = '/tmp/premium/'+ str(rtc)
         print 'Your CTE package and related logs will be created at:\n', path,'\n'
         os.mkdir(path, 0755)
+
+def import_into_SIT():
+
 
 #############################################################
 
@@ -21,8 +22,7 @@ if op.isdigit():
                 print 'Import selected.\n'
         elif(op == '2'):
                 print 'Export selected.\n'
-                export_from_dev()
-
+                export_from_DEV()
         elif((op < 0) or (op > 2)):
                 print 'Invalid Option, exiting.\n'
                 sys.exit(0)
