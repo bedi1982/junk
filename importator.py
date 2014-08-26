@@ -48,7 +48,7 @@ if op.isdigit():
                 print 'Export from SIT selected.\n'
                 export_from_SIT()
 
-elif((op < 0) or (op > 2)):
+        elif((op < 0) or (op > 2)):
                 print 'Invalid Option, exiting.\n'
                 sys.exit(0)
 else:
