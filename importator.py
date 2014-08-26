@@ -30,10 +30,3 @@ if op.isdigit():
 else:
         print 'Invalid Option, exiting. Only 1 or 2 are valid options, letters not.\n'
         sys.exit(0)
-
-#path = '/tmp/sergio/'+ str(rtc)
-#print path
-#os.mkdir(path, 0755)
-
-def import_into_sit():
-        print 'Insert RTC number'
