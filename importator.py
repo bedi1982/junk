@@ -12,6 +12,7 @@ def export_from_DEV():
         os.mkdir(path, 0755)
 
 def import_into_SIT():
+                print 'Import into sit function called'
 
 
 #############################################################
