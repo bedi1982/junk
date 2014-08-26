@@ -29,7 +29,7 @@ def import_into_SIT():
 ########################################################################################
 
 #lets get the task:
-op = raw_input('Insert 1 to Import into SIT. Insert 2 to Export from DEV. Insert 3 to export from SIT.\n')
+op = raw_input('Insert:\n1 to Import into SIT.\n2 to Export from DEV.\n3 to Export from SIT.\n')
 
 #lets make sure that premium folder exists under /tmp
 premium_folder()
