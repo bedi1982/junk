@@ -49,7 +49,7 @@ if op.isdigit():
                 export_from_SIT()
 
         elif((op < 0) or (op > 2)):
-                print 'Invalid Option, exiting.\n'
+                print 'Invalid Number, exiting.\n'
                 sys.exit(0)
 else:
         print 'Invalid Option, exiting. Only 1, 2 and 3 are valid options, letters not.\n'
