@@ -8,7 +8,7 @@ import os, sys
 ###########SOME FUNCTIONS###################################
 def premium_folder():
         if not os.path.exists('/tmp/premium/'):
-                print '/tmp/premium folder not exists, -not a problem, creating and proceeding...\n'
+        #       print '/tmp/premium folder not exists, -not a problem, creating and proceeding...\n'
                 os.makedirs('/tmp/premium/')
 
 def export_from_DEV():
