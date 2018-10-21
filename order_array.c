@@ -10,7 +10,6 @@ int array_elements_count(int *x, int size){
 		}
 		count ++;
 	}
-	printf("\n");
 	return count;
 }
 
@@ -73,5 +72,5 @@ int main(){
 	printf("\nArray Uniq: ");
 	array_remove_dupes(x, size);
 
-	printf("\n\n");
+	printf("\n");
 }
