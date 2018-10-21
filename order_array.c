@@ -1,8 +1,6 @@
 #include <stdio.h>
-#include <string.h>
 
 int array_elements_count(int *x, int size){
-	
 	int i = 0;
 	int count = 0;
 	
@@ -18,7 +16,6 @@ int array_elements_count(int *x, int size){
 
 
 void print_array(int *x, int size){
-	
 	int i = 0;
 	for(i=0; i<size; i++){
 		printf("%d ", x[i]);
@@ -26,9 +23,7 @@ void print_array(int *x, int size){
 }
 
 
-//array sorter <//
 int * array_sorter(int *x, int size){ 
-	
 	int i;
 	int j;
        	int swap; 
@@ -44,10 +39,8 @@ int * array_sorter(int *x, int size){
                 }
 	return x;
 }
-//end array sorter//
 
-
-int * remove_dupes(int *x, int size){
+int * array_remove_dupes(int *x, int size){
 	int A[1000];
 	int i = 0;
 	int j = 0;
@@ -78,7 +71,7 @@ int main(){
 	print_array(x,size);
 		
 	printf("\nArray Uniq: ");
-	remove_dupes(x, size);
+	array_remove_dupes(x, size);
 
 	printf("\n\n");
 }
