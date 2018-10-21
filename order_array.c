@@ -25,7 +25,7 @@ void print_array(int *x, int size){
 int * array_sorter(int *x, int size){ 
 	int i;
 	int j;
-       	int swap; 
+	int swap; 
 	int n;
 
         for (i = 0; i < size; ++i)
