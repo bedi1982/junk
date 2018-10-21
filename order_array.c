@@ -53,8 +53,20 @@ int * array_remove_dupes(int *x, int size){
 	print_array(A, j);
 }
 
+int * array_invert(int *x, int size){
+	int i = 0;
+	int j = 0;
+	int A[size];
+	
+	for(i = size-1; i >= 0; i--){
+			A[j] = x[i];
+			j++;
+	}
+	print_array(A, j);
+}
+
 int main(){
-        int x[1000]= {-1,2,3,2,1000,27,3,-100};
+        int x[1000]= {1,2,3,4,5,6};
 	int size = sizeof(x)/sizeof(int);
 	
 	size = array_elements_count(x,size);
@@ -72,5 +84,7 @@ int main(){
 	printf("\nArray Uniq: ");
 	array_remove_dupes(x, size);
 
+	printf("\n\narray invert: ");
+	array_invert(x, size);
 	printf("\n");
 }
