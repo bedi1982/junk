@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//beware on this one, use '\o' as a finisher example//
 int array_elements_count(int *x, int size){
 	int i = 0;
 	int count = 0;
