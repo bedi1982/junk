@@ -13,4 +13,5 @@ this disables/dont uses systemd
 If you follow the blog encrypted install method dont forget to built the kernel with:
 genkernel --luks --lvm  all
 
+after build dont forget to check if /boot/grub/grub.cfg is configured to load/boot the new kernel
 last used with: kernel-4.19.86
