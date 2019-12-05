@@ -1,0 +1,15 @@
+Very good manual on how to install encrypted:
+https://www.nkly.me/blog/2019/install-gentoo/
+
+This kernel config is for notebook:
+DELL Precision 5510
+
+ALl notebook devices work;
+virtualization qemu/libvirt fully works - build qemu with usbredir and libvirt with virt-network flags.
+support for external dell dock connected via usb-C works
+usb-c network adapter works
+
+Dont forget to built the kernel with:
+genkernel --luks --lvm  all
+
+last used with: kernel-4.19.86
