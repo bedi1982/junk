@@ -5,11 +5,11 @@ This kernel config is for notebook:
 DELL Precision 5510
 
 ALl notebook devices work;
-virtualization qemu/libvirt fully works - build qemu with usbredir and libvirt with virt-network flags.
+virtualization qemu/libvirt fully works - build qemu with 'usbredir' use flag and libvirt with 'virt-network' use flag.
 support for external dell dock connected via usb-C works
 usb-c network adapter works
 
-Dont forget to built the kernel with:
+If you follow the blog encrypted install method dont forget to built the kernel with:
 genkernel --luks --lvm  all
 
 last used with: kernel-4.19.86
