@@ -1,4 +1,3 @@
-//how would you get the pointer of an array
 #include <stdio.h>
 #include <string.h>
 
@@ -10,10 +9,8 @@ void array_size(int* array, int size){
 	for (i = 0; i < 5; i++){
 		printf("x[%d] memory address: %p", i, &array[i]);
 		printf(" x[%d] value: %d\n", i, array[i]);
-		printf(" Overflowing NOW!!! [%d] value: %d\n", i, array[i]);
 	}
 	
-	//int size = sizeof(*array/sizeof(int));
 	printf("Size of array: %d\n", size);
 	int x[9];
 	int xsize = sizeof(x)/sizeof(int);
@@ -40,13 +37,15 @@ struct test{
 
 struct cerveja{
 	char malte[3]; 
-	char nome[];
+	char nome[]; //not good, should initialize within a struct//
 };
 
 void main(){
 	int r[5] = {10,20,30,40,50};
 	int x[5] = {10,20,30,40,50};
 	float y[5] = {1.1,1.2,1.3,1.4,1.5};
+
+	//some unsigned tests
 	unsigned long z[5] = {-9999,-9223372036854775807,-9223372036854775807,-9223372036854775807,-9223372036854775807};
 	signed long w[5] = {-9999,-9223372036854775807,-9223372036854775807,-9223372036854775807,9223372036854775807};
 	int i =0;
